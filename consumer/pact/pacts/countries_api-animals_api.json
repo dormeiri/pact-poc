@@ -1,0 +1,51 @@
+{
+  "consumer": {
+    "name": "Countries API"
+  },
+  "provider": {
+    "name": "Animals API"
+  },
+  "interactions": [
+    {
+      "description": "a request to receive all animals",
+      "providerState": "has animals",
+      "request": {
+        "method": "GET",
+        "path": "/animals"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "animals": [
+            {
+              "first_name": "Billy",
+              "last_name": "Goat",
+              "kind": "goat",
+              "age": 21,
+              "gender": "M",
+              "location": {
+                "country": "Australia",
+                "post_code": 3000
+              }
+            }
+          ]
+        },
+        "matchingRules": {
+          "$.body.animals": {
+            "min": 1
+          },
+          "$.body.animals[*].*": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

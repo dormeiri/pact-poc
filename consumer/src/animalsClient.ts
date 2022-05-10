@@ -1,6 +1,6 @@
 import { Animal, AnimalsResponse } from "./types"
 import * as axios from "axios"
-import { animalsApiSettings } from './settings'
+import { animalsApiSettings } from '../../provider/src/settings'
 
 export class AnimalsClient {
   private baseUrl = animalsApiSettings.baseUrl;
