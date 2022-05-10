@@ -1,0 +1,35 @@
+[
+  {
+    "first_name": "Billy",
+    "last_name": "Goat",
+    "kind": "goat",
+    "age": 21,
+    "gender": "M",
+    "location": {
+      "country": "Australia",
+      "post_code": 3000
+    }
+  },
+  {
+    "first_name": "Nanny",
+    "kind": "goat",
+    "last_name": "Doe",
+    "age": 27,
+    "gender": "F",
+    "location": {
+      "country": "Australia",
+      "post_code": 3000
+    }
+  },
+  {
+    "first_name": "Simba",
+    "last_name": "Cantwaittobeking",
+    "kind": "lion",
+    "age": 4,
+    "gender": "M",
+    "location": {
+      "country": "Australia",
+      "post_code": 3000
+    }
+  }
+]
