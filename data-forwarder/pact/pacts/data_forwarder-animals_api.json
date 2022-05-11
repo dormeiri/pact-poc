@@ -1,0 +1,63 @@
+{
+  "consumer": {
+    "name": "Data Forwarder"
+  },
+  "provider": {
+    "name": "Animals API"
+  },
+  "interactions": [
+    {
+      "description": "a request to save an animal",
+      "providerState": "has animals",
+      "request": {
+        "method": "POST",
+        "path": "/animals",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "first_name": "Billy",
+          "last_name": "Goat",
+          "kind": "goat",
+          "age": 21,
+          "gender": "M",
+          "location": {
+            "country": "Australia",
+            "post_code": 3000
+          }
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "first_name": "Billy",
+          "last_name": "Goat",
+          "kind": "goat",
+          "age": 21,
+          "gender": "M",
+          "location": {
+            "country": "Australia",
+            "post_code": 3000
+          }
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

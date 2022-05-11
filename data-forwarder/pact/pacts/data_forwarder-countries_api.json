@@ -1,0 +1,43 @@
+{
+  "consumer": {
+    "name": "Data Forwarder"
+  },
+  "provider": {
+    "name": "Countries API"
+  },
+  "messages": [
+    {
+      "description": "a request to save an animal",
+      "providerStates": [
+
+      ],
+      "contents": {
+        "first_name": "Billy",
+        "last_name": "Goat",
+        "kind": "goat",
+        "age": 21,
+        "gender": "M",
+        "location": {
+          "country": "Australia",
+          "post_code": 3000
+        }
+      },
+      "matchingRules": {
+        "body": {
+          "$": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  }
+}
