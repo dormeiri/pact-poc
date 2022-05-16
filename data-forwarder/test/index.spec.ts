@@ -30,7 +30,7 @@ messagePactWith(
                 port: Number(animalsApiSettings.port)
             },
             (provider) => {
-                describe("when receiving an event to forward", () => {
+                describe("when receiving an animal message to forward", () => {
                     it("accepts it", async () => {
                         await provider.addInteraction({
                             state: "has animals",
@@ -47,7 +47,7 @@ messagePactWith(
                             },
                         })
                         await messagePact
-                            .expectsToReceive("a request to save an animal")
+                            .expectsToReceive("an animal message to forward")
                             .withContent(like(ANIMAL))
                             .verify(synchronousBodyHandler(handleEventRecord))
                     });

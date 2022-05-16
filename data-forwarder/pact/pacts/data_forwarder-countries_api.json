@@ -7,7 +7,7 @@
   },
   "messages": [
     {
-      "description": "a request to save an animal",
+      "description": "an animal message to forward",
       "providerStates": [
 
       ],

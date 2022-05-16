@@ -82,7 +82,7 @@ describe("message provider pact verification", () => {
     // Pact setup
     const messagePact = new MessageProviderPact({
         messageProviders: {
-            "a request to save an animal": async () => produceAnimal("Colombia"),
+            "an animal message to forward": async () => produceAnimal("Colombia"),
         },
         provider: "Countries API",
         pactUrls: [path.resolve(process.cwd(), "../data-forwarder/pact/pacts/data_forwarder-countries_api.json")],
