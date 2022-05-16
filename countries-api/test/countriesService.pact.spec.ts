@@ -4,7 +4,6 @@ import { CountriesService } from "../src/countriesService";
 import { Matchers, MessageProviderPact } from "@pact-foundation/pact";
 import path from "path";
 import { produceAnimal } from "../src/animalsUtils";
-import { AnimalsResponse } from "../src/types";
 
 const { like, eachLike } = Matchers;
 
