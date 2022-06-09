@@ -2,20 +2,24 @@ import { messagePactWith, pactWith } from "jest-pact"
 import { Matchers, synchronousBodyHandler } from "@pact-foundation/pact";
 import { handleEventRecord } from "..";
 import { animalsApiSettings } from "../settings";
+import { eachLike } from "@pact-foundation/pact/src/dsl/matchers";
 
 const { like } = Matchers;
 
-export const ANIMAL = {
-    first_name: "Billy",
-    last_name: "Goat",
-    kind: "goat",
-    age: 21,
-    gender: "M",
-    location: {
-        country: "Australia",
-        post_code: 3000
+export const ANIMAL = like(
+    {
+        first_name: "Billy",
+        last_name: "Goat",
+        kind: "goat",
+        age: 21,
+        gender: "M",
+        location: {
+            country: "Australia",
+            post_code: 3000
+        },
+        interests: eachLike('Boulder Climbing')
     }
-};
+);
 
 messagePactWith(
     {
@@ -39,16 +43,16 @@ messagePactWith(
                                 method: "POST",
                                 path: "/animals",
                                 headers: { "Content-Type": "application/json" },
-                                body: like(ANIMAL)
+                                body: ANIMAL
                             },
                             willRespondWith: {
                                 status: 200,
-                                body: like(ANIMAL)
+                                body: ANIMAL
                             },
                         })
                         await messagePact
                             .expectsToReceive("an animal message to forward")
-                            .withContent(like(ANIMAL))
+                            .withContent(ANIMAL)
                             .verify(synchronousBodyHandler(handleEventRecord))
                     });
                 });

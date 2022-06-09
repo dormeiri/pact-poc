@@ -4,6 +4,7 @@ import { CountriesService } from "../src/countriesService";
 import { Matchers, MessageProviderPact } from "@pact-foundation/pact";
 import path from "path";
 import { produceAnimal } from "../src/animalsUtils";
+import { Animal } from "../src/types";
 
 const { like, eachLike } = Matchers;
 
@@ -16,7 +17,8 @@ export const ANIMAL = {
     location: {
         country: "Australia",
         post_code: 3000
-    }
+    },
+    interests: eachLike('Speed Climbing')
 };
 
 export const ALL_ANIMALS_RESPONSE_BODY = {

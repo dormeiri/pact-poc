@@ -28,7 +28,10 @@
               "location": {
                 "country": "Australia",
                 "post_code": 3000
-              }
+              },
+              "interests": [
+                "Speed Climbing"
+              ]
             }
           ]
         },
@@ -40,6 +43,12 @@
             "min": 1
           },
           "$.body.animals[*].*": {
+            "match": "type"
+          },
+          "$.body.animals[*].interests": {
+            "min": 1
+          },
+          "$.body.animals[*].interests[*].*": {
             "match": "type"
           }
         }

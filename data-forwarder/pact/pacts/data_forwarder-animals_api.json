@@ -24,10 +24,19 @@
           "location": {
             "country": "Australia",
             "post_code": 3000
-          }
+          },
+          "interests": [
+            "Boulder Climbing"
+          ]
         },
         "matchingRules": {
           "$.body": {
+            "match": "type"
+          },
+          "$.body.interests": {
+            "min": 1
+          },
+          "$.body.interests[*].*": {
             "match": "type"
           }
         }
@@ -45,10 +54,19 @@
           "location": {
             "country": "Australia",
             "post_code": 3000
-          }
+          },
+          "interests": [
+            "Boulder Climbing"
+          ]
         },
         "matchingRules": {
           "$.body": {
+            "match": "type"
+          },
+          "$.body.interests": {
+            "min": 1
+          },
+          "$.body.interests[*].*": {
             "match": "type"
           }
         }
